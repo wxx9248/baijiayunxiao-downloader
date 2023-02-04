@@ -1,0 +1,59 @@
+name: build
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checks-out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18
+      - name: Setup yarn
+        run: |
+          npm install --global yarn
+      - name: Fetching node modules
+        run: |
+          yarn
+      - name: Build distributable
+        run: |
+          yarn build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'dist'
+          path: |
+            dist/
+  release:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts/
+      - name: Gathering artifacts
+        run: |
+          mv artifacts/dist/* ./
+          rm -rf artifacts
+      - name: Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: false
+          automatic_release_tag: latest
+          files: |
+            *
