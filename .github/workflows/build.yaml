@@ -19,15 +19,15 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 18
-      - name: Setup yarn
+      - name: Setup pnpm
         run: |
-          npm install --global yarn
+          npm install --global pnpm
       - name: Fetching node modules
         run: |
-          yarn
+          pnpm install
       - name: Build distributable
         run: |
-          yarn build
+          pnpm build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
