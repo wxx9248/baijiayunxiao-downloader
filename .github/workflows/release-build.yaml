@@ -1,0 +1,85 @@
+name: release-build
+on:
+  workflow_dispatch:
+    inputs:
+      releaseType:
+        description: "Release type"
+        required: true
+        default: "patch"
+        type: choice
+        options:
+          - patch
+          - prepatch
+          - minor
+          - preminor
+          - major
+          - premajor
+          - prerelease
+env:
+  RELEASE_TYPE: ${{ inputs.releaseType }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checks-out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Checks-out repository for wxx9248/bump-semver
+        uses: actions/checkout@v3
+        with:
+          repository: wxx9248/bump-semver
+          path: bump-semver
+          submodules: recursive
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18
+      - name: Setup pnpm
+        run: |
+          npm install --global pnpm
+      - name: Build wxx9248/bump-semver
+        run: |
+          cd bump-semver
+          pnpm install && pnpm build
+          chmod 755 dist/main.js
+          cd ..
+      - name: Bumping package version
+        run: |
+          ./bump-semver/dist/main.js package.json "$RELEASE_TYPE"
+      - name: Remove wxx9248/bump-semver
+        run: |
+          rm -rf bump-semver
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          commit-message: "GitHub Actions: Bump package version"
+          branch: ci/bump-package-version
+          delete-branch: true
+          branch-suffix: short-commit-hash
+          title: "GitHub Actions: Bump package version"
+          body: Bump package semantic version by ${{ inputs.releaseType }}
+          assignees: |
+            wxx9248
+          reviewers: |
+            wxx9248
+      - name: Fetching node modules
+        run: |
+          pnpm install
+      - name: Build distributable
+        run: |
+          pnpm build
+      - name: Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: false
+          automatic_release_tag: latest
+          files: |
+            dist/*.js
