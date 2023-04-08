@@ -23,26 +23,26 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mdi/font": "^7.1.96",
-    "vite-plugin-monkey": "^2.11.1",
+    "@mdi/font": "^7.2.96",
+    "vite-plugin-monkey": "^3.1.3",
     "vite-plugin-vuetify": "^1.0.2",
     "vue": "^3.2.47",
-    "vuetify": "3"
+    "vuetify": "^3.1.13"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@types/node": "^18.13.0",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^11.0.0",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^18.15.11",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
     "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.33.0",
-    "eslint-plugin-vue": "^9.3.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-vue": "^9.10.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.4",
-    "typescript": "~4.9.5",
-    "vite": "^4.1.1",
-    "vue-tsc": "^1.0.12"
+    "prettier": "^2.8.7",
+    "typescript": "~5.0.4",
+    "vite": "^4.2.1",
+    "vue-tsc": "^1.2.0"
   },
   "engines": {
     "node": "18.*.*"
