@@ -1,6 +1,6 @@
 {
   "name": "baijiayunxiao-downloader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "下载并解码百家云网校的EV1视频",
   "homepage": "https://github.com/wxx9248/baijiayunxiao-downloader",
   "bugs": {
