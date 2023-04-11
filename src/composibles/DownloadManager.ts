@@ -1,6 +1,6 @@
 import type { Ref } from "vue";
 import { ref } from "vue";
-import { decode } from "@/composibles/Decoder";
+import { decodeEV1Video } from "@/util/Decoding";
 
 export type Saver = () => void;
 export type Remover = () => void;
@@ -44,12 +44,12 @@ export class DownloadManager {
         return this.#viewMap.value.values();
     }
 
-    async download(url: string): Promise<DownloadStatus> {
-        let filename = "未命名";
-        const matchArray = url.match(/^.*\/(.*)\.(.*)\?.*$/);
-        if (matchArray) {
-            filename = matchArray[1];
-        }
+    async download(
+        url: string,
+        filename: string,
+        extension: string
+    ): Promise<DownloadStatus> {
+        let needDecode = false;
 
         const key = this.#keyCounter++;
 
@@ -57,16 +57,21 @@ export class DownloadManager {
             cancel: false
         });
 
+        if (extension === "ev1") {
+            needDecode = true;
+            extension = "flv";
+        }
+
         this.#viewMap.value.set(key, {
             key: key,
             url: url,
-            filename: filename + ".flv",
+            filename: `${filename}.${extension}`,
             progress: 0,
-            remover: this.#removerGenerator(key),
-            saver: this.#saverGenerator(key)
+            remover: this.#getRemover(key),
+            saver: this.#getSaver(key)
         });
 
-        const result = await this.#download(key);
+        const result = await this.#download(key, needDecode);
         if (result.status === "finished") {
             this.#resultMap.set(key, result);
             this.#viewMap.value.get(key)!.progress = 100;
@@ -76,7 +81,10 @@ export class DownloadManager {
         return result.status;
     }
 
-    async #download(key: number): Promise<DownloadResultEntry> {
+    async #download(
+        key: number,
+        needDecode: boolean
+    ): Promise<DownloadResultEntry> {
         const entry: DownloadResultEntry = {
             key: key,
             status: undefined,
@@ -88,7 +96,7 @@ export class DownloadManager {
             const reader = response.body!.getReader();
             const contentLength: number =
                 +response.headers.get("Content-Length")!;
-            const chunks: Uint8Array[] = [];
+            let chunks: Uint8Array[] = [];
             const context = this.#controlContextMap.get(key)!;
 
             let receivedLength = 0;
@@ -112,7 +120,11 @@ export class DownloadManager {
                 console.debug(`Received ${receivedLength} of ${contentLength}`);
             }
 
-            const blob = new Blob(decode(chunks), {
+            if (needDecode) {
+                chunks = decodeEV1Video(chunks);
+            }
+
+            const blob = new Blob(chunks, {
                 type: "application/octet-stream"
             });
             entry.blobURL = URL.createObjectURL(blob);
@@ -126,7 +138,7 @@ export class DownloadManager {
         return entry;
     }
 
-    #saverGenerator(key: number): Saver {
+    #getSaver(key: number): Saver {
         return () => {
             const filename = this.#viewMap.value.get(key)!.filename;
             const blobURL = this.#resultMap.get(key)!.blobURL;
@@ -142,7 +154,7 @@ export class DownloadManager {
         };
     }
 
-    #removerGenerator(key: number): Remover {
+    #getRemover(key: number): Remover {
         return () => {
             if (this.#controlContextMap.has(key)) {
                 this.#controlContextMap.get(key)!.cancel = true;
