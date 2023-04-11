@@ -19,10 +19,13 @@ type CDNListInfo = {
 };
 
 export function extractVideoInfo(json: object): VideoInfo {
+    // @ts-ignore
     const videoID = json["data"]["video_id"];
+    // @ts-ignore
     const title = json["data"]["video_info"]["title"];
     const sources: VideoSource[] = [];
 
+    // @ts-ignore
     const playInfo = json["data"]["all_format_play_info"];
     for (const format in playInfo) {
         for (const definition in playInfo[format]) {
@@ -48,8 +51,10 @@ export function extractVideoInfo(json: object): VideoInfo {
 
 function getCDNListInfo(cdnList: object[]): CDNListInfo[] {
     return cdnList.map((value) => {
-        let url = value.url;
+        // @ts-ignore
+        let url = value["url"];
         if (url === "") {
+            // @ts-ignore
             url = decodeBJCloudVODURL(value["enc_url"]);
         }
         if (!url) {
@@ -57,6 +62,7 @@ function getCDNListInfo(cdnList: object[]): CDNListInfo[] {
         }
         return {
             url: url,
+            // @ts-ignore
             size: value["size"]
         };
     });

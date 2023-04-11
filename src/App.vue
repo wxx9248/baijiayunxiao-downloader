@@ -21,10 +21,14 @@ const showSourceList: Ref<boolean> = ref(false);
 const alertController = new AlertController();
 
 // JQuery AJAX hook
+// @ts-ignore
 const originalAJAX = unsafeWindow["$"].ajax;
+// @ts-ignore
 unsafeWindow["$"].ajax = (settings: object) => {
+    // @ts-ignore
     const originalSuccess = settings.success;
-    settings.success = (data, textStatus, jqXHR) => {
+    // @ts-ignore
+    settings.success = (data: object, textStatus: string, jqXHR: any) => {
         currentVideoInfo.value = extractVideoInfo(data);
         alertController.info(`检测到视频: ${currentVideoInfo.value.title}`);
         alertController.show();
@@ -46,8 +50,7 @@ async function sourceListClickHandler(source: VideoSource) {
 
     let filename = currentVideoInfo.value.title;
     const matchMap = filename.match(/(.*)\..*/);
-    console.log(matchMap.length);
-    if (matchMap.length > 1) {
+    if (matchMap && matchMap.length > 1) {
         filename = matchMap[1];
     }
 
