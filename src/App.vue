@@ -1,42 +1,59 @@
 <script lang="ts" setup>
+import type { Ref } from "vue";
 import { ref } from "vue";
-import { unsafeWindow } from "vite-plugin-monkey/dist/client";
 import { AlertController } from "@/composibles/AlertController";
 import { DownloadManager } from "@/composibles/DownloadManager";
+import { unsafeWindow } from "vite-plugin-monkey/dist/client";
+import type { VideoInfo, VideoSource } from "@/util/VideoInfoExtration";
+import { extractVideoInfo } from "@/util/VideoInfoExtration";
+import { getUUID } from "@/util/UUID";
+import { toHumanReadableSize } from "@/util/UnitConversion";
 
-let currentVideoURL = ref("");
+const currentVideoInfo: Ref<VideoInfo> = ref({
+    videoID: "",
+    title: "",
+    sources: []
+});
+
+const showSourceList: Ref<boolean> = ref(false);
 
 // Alerts
 const alertController = new AlertController();
 
-// fetch() API hook
-const originalFetch = unsafeWindow.window.fetch;
-unsafeWindow.window.fetch = async (
-    // eslint-disable-next-line no-undef
-    resource: RequestInfo | URL,
-    // eslint-disable-next-line no-undef
-    options?: RequestInit
-): Promise<Response> => {
-    const response = await originalFetch(resource, options);
-    if (response.url.includes(".ev1")) {
-        console.debug("Detected URL: " + response.url);
-        currentVideoURL.value = response.url;
-
-        let matchArray = response.url.match(/.*\/(.*?\.ev1)/);
-        alertController.error("检测到视频链接，但正则表达式匹配失败");
-        if (matchArray) {
-            alertController.info("检测到视频: " + matchArray[1]);
-            alertController.show();
-        }
-    }
-    return response;
+// JQuery AJAX hook
+const originalAJAX = unsafeWindow["$"].ajax;
+unsafeWindow["$"].ajax = (settings: object) => {
+    const originalSuccess = settings.success;
+    settings.success = (data, textStatus, jqXHR) => {
+        currentVideoInfo.value = extractVideoInfo(data);
+        alertController.info(`检测到视频: ${currentVideoInfo.value.title}`);
+        alertController.show();
+        originalSuccess(data, textStatus, jqXHR);
+    };
+    originalAJAX(settings);
 };
 
 // Downloading
 const downloadManager = new DownloadManager();
 
-async function downloadHandler() {
-    const status = await downloadManager.download(currentVideoURL.value);
+async function sourceListClickHandler(source: VideoSource) {
+    const uuid = getUUID();
+
+    let url = source.url;
+    if (uuid !== "") {
+        url += `?uuid=${uuid}`;
+    }
+
+    let filename = currentVideoInfo.value.title;
+    const matchMap = filename.match(/(.*)\..*/);
+    console.log(matchMap.length);
+    if (matchMap.length > 1) {
+        filename = matchMap[1];
+    }
+
+    const extension = source.format;
+
+    const status = await downloadManager.download(url, filename, extension);
     if (status === "error") {
         alertController.error("视频下载失败");
     }
@@ -62,43 +79,51 @@ async function downloadHandler() {
         </v-fade-transition>
     </div>
     <div class="bottom-left">
-        <v-table theme="dark">
+        <v-table class="rounded" theme="dark">
             <thead>
-            <tr>
-                <th class="text-left" style="width: 70%">文件名</th>
-                <th class="text-left" style="width: 10%">进度</th>
-                <th class="text-left" style="width: 10%">保存</th>
-                <th class="text-left" style="width: 10%">移除</th>
-            </tr>
+                <tr>
+                    <th class="text-left" style="width: 70%">文件名</th>
+                    <th class="text-left" style="width: 10%">进度</th>
+                    <th class="text-left" style="width: 10%">保存</th>
+                    <th class="text-left" style="width: 10%">移除</th>
+                </tr>
             </thead>
             <tbody>
-            <tr v-for="entry in downloadManager.view" :key="entry.key">
-                <td>{{ entry.filename }}</td>
-                <td>{{ entry.progress.toFixed(1) + "%" }}</td>
-                <td>
-                    <v-btn
-                        :disabled="entry.progress < 100"
-                        icon="mdi-content-save"
-                        @click="entry.saver"
-                    ></v-btn>
-                </td>
-                <td>
-                    <v-btn icon="mdi-close" @click="entry.remover"></v-btn>
-                </td>
-            </tr>
+                <tr v-for="entry in downloadManager.view" :key="entry.key">
+                    <td>{{ entry.filename }}</td>
+                    <td>{{ entry.progress.toFixed(1) + "%" }}</td>
+                    <td>
+                        <v-btn
+                            :disabled="entry.progress < 100"
+                            icon="mdi-content-save"
+                            @click="entry.saver"
+                        ></v-btn>
+                    </td>
+                    <td>
+                        <v-btn icon="mdi-close" @click="entry.remover"></v-btn>
+                    </td>
+                </tr>
             </tbody>
         </v-table>
     </div>
 
     <div class="bottom-right">
-        <v-fade-transition>
-            <v-btn
-                :disabled="currentVideoURL === ''"
-                color="blue"
-                icon="mdi-download-box"
-                @click="downloadHandler"
-            />
-        </v-fade-transition>
+        <v-list class="source-list rounded" theme="dark">
+            <v-list-item
+                v-for="source in currentVideoInfo.sources"
+                :key="source.url"
+                :title="`${source.definition} ${
+                    source.format
+                } ${toHumanReadableSize(source.size, 1)}`"
+                @click="sourceListClickHandler(source)"
+            ></v-list-item>
+        </v-list>
+        <v-btn
+            :disabled="currentVideoInfo.videoID === ''"
+            color="blue"
+            icon="mdi-download-box"
+            @click="showSourceList = !showSourceList"
+        />
     </div>
 </template>
 
@@ -125,5 +150,18 @@ async function downloadHandler() {
     position: fixed;
     bottom: 0;
     right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10000000000;
+}
+
+.bottom-right * {
+    margin: 5px;
+}
+
+.source-list {
+    display: v-bind('showSourceList ? "block": "none"');
 }
 </style>
