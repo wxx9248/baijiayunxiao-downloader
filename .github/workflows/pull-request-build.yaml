@@ -24,4 +24,4 @@ jobs:
           pnpm install
       - name: Build distributable
         run: |
-          pnpm build
+          pnpm build-only

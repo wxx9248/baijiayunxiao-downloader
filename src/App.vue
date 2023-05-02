@@ -131,6 +131,10 @@ async function sourceListClickHandler(source: VideoSource) {
 </template>
 
 <style scoped>
+* {
+    z-index: 10000000000;
+}
+
 .top {
     left: 0;
     position: absolute;
@@ -138,7 +142,6 @@ async function sourceListClickHandler(source: VideoSource) {
     top: 10px;
     display: flex;
     justify-content: center;
-    z-index: 1000;
 }
 
 .bottom-left {
@@ -157,7 +160,6 @@ async function sourceListClickHandler(source: VideoSource) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 10000000000;
 }
 
 .bottom-right * {
