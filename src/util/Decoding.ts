@@ -1,5 +1,3 @@
-import { Base64 } from "@/util/Base64";
-
 export function decodeEV1Video(chunks: Uint8Array[]): Uint8Array[] {
     console.debug("Decoding video");
     let counter = 0;
@@ -29,13 +27,13 @@ export function decodeBJCloudVODURL(url: string): string | undefined {
         .replace(/_/g, "/");
 
     const padding = url.length % 4;
-    if (padding == 2) {
+    if (padding === 2) {
         url += "==";
-    } else if (padding == 3) {
+    } else if (padding === 3) {
         url += "=";
     }
 
-    url = new Base64().decode(url);
+    url = atob(url);
 
     const factor = url.charCodeAt(0);
     const c = factor % 8;
