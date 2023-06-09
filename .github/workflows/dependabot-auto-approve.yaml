@@ -1,11 +1,11 @@
-name: Dependabot Auto-approve
+name: Dependabot Auto-Approve
 on: pull_request
 
 permissions:
   pull-requests: write
 
 jobs:
-  dependabot:
+  auto-approve:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
