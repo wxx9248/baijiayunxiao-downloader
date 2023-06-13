@@ -18,6 +18,9 @@ on:
 env:
   RELEASE_TYPE: ${{ inputs.releaseType }}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
