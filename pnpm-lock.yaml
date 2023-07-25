@@ -10,10 +10,10 @@ dependencies:
     version: 7.2.96
   vite-plugin-monkey:
     specifier: ^3.3.1
-    version: 3.3.1(vite@4.4.6)
+    version: 3.3.1(vite@4.4.7)
   vite-plugin-vuetify:
     specifier: ^1.0.2
-    version: 1.0.2(vite@4.4.6)(vue@3.3.4)(vuetify@3.3.9)
+    version: 1.0.2(vite@4.4.7)(vue@3.3.4)(vuetify@3.3.9)
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -30,7 +30,7 @@ devDependencies:
     version: 20.4.4
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
-    version: 4.2.3(vite@4.4.6)(vue@3.3.4)
+    version: 4.2.3(vite@4.4.7)(vue@3.3.4)
   '@vue/eslint-config-prettier':
     specifier: ^8.0.0
     version: 8.0.0(eslint@8.45.0)(prettier@3.0.0)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ~5.1.6
     version: 5.1.6
   vite:
-    specifier: ^4.4.6
-    version: 4.4.6(@types/node@20.4.4)
+    specifier: ^4.4.7
+    version: 4.4.7(@types/node@20.4.4)
   vue-tsc:
     specifier: ^1.8.6
     version: 1.8.6(typescript@5.1.6)
@@ -510,14 +510,14 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@vitejs/plugin-vue@4.2.3(vite@4.4.6)(vue@3.3.4):
+  /@vitejs/plugin-vue@4.2.3(vite@4.4.7)(vue@3.3.4):
     resolution: {integrity: sha512-R6JDUfiZbJA9cMiguQ7jxALsgiprjBeHL5ikpXfJCH62pPHtI+JdJ5xWj6Ev73yXSlYl86+blXn1kZHQ7uElxw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
       vue: 3.3.4
     dev: true
 
@@ -2507,7 +2507,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey@3.3.1(vite@4.4.6):
+  /vite-plugin-monkey@3.3.1(vite@4.4.7):
     resolution: {integrity: sha512-peroiyopLphJOJx1mRLEMr5hucSoXzNNhwQ4wmsl+7QcaXhEjDAEY7HIdRlfcDxJESByadKAm+o0YEiapjiX5w==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
@@ -2525,12 +2525,12 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.1
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /vite-plugin-vuetify@1.0.2(vite@4.4.6)(vue@3.3.4)(vuetify@3.3.9):
+  /vite-plugin-vuetify@1.0.2(vite@4.4.7)(vue@3.3.4)(vuetify@3.3.9):
     resolution: {integrity: sha512-MubIcKD33O8wtgQXlbEXE7ccTEpHZ8nPpe77y9Wy3my2MWw/PgehP9VqTp92BLqr0R1dSL970Lynvisx3UxBFw==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -2540,15 +2540,15 @@ packages:
       '@vuetify/loader-shared': 1.7.1(vue@3.3.4)(vuetify@3.3.9)
       debug: 4.3.4
       upath: 2.0.1
-      vite: 4.4.6(@types/node@20.4.4)
+      vite: 4.4.7(@types/node@20.4.4)
       vuetify: 3.3.9(typescript@5.1.6)(vite-plugin-vuetify@1.0.2)(vue@3.3.4)
     transitivePeerDependencies:
       - supports-color
       - vue
     dev: false
 
-  /vite@4.4.6(@types/node@20.4.4):
-    resolution: {integrity: sha512-EY6Mm8vJ++S3D4tNAckaZfw3JwG3wa794Vt70M6cNJ6NxT87yhq7EC8Rcap3ahyHdo8AhCmV9PTk+vG1HiYn1A==}
+  /vite@4.4.7(@types/node@20.4.4):
+    resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -2666,7 +2666,7 @@ packages:
         optional: true
     dependencies:
       typescript: 5.1.6
-      vite-plugin-vuetify: 1.0.2(vite@4.4.6)(vue@3.3.4)(vuetify@3.3.9)
+      vite-plugin-vuetify: 1.0.2(vite@4.4.7)(vue@3.3.4)(vuetify@3.3.9)
       vue: 3.3.4
     dev: false
 
