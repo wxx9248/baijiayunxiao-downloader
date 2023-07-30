@@ -37,7 +37,7 @@ jobs:
           path: bump-semver
           submodules: recursive
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: 18
       - name: Setup pnpm
