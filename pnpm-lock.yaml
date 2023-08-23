@@ -9,8 +9,8 @@ dependencies:
     specifier: ^7.2.96
     version: 7.2.96
   vite-plugin-monkey:
-    specifier: ^3.4.1
-    version: 3.4.1(vite@4.4.9)
+    specifier: ^3.4.2
+    version: 3.4.2(vite@4.4.9)
   vite-plugin-vuetify:
     specifier: ^1.0.2
     version: 1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.14)
@@ -1834,6 +1834,13 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  /magic-string@0.30.3:
+    resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
+
   /make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -2419,8 +2426,8 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /systemjs@6.14.1:
-    resolution: {integrity: sha512-8ftwWd+XnQtZ/aGbatrN4QFNGrKJzmbtixW+ODpci7pyoTajg4sonPP8aFLESAcuVxaC1FyDESt+SpfFCH9rZQ==}
+  /systemjs@6.14.2:
+    resolution: {integrity: sha512-1TlOwvKWdXxAY9vba+huLu99zrQURDWA8pUTYsRIYDZYQbGyK+pyEP4h4dlySsqo7ozyJBmYD20F+iUHhAltEg==}
     dev: false
 
   /text-table@0.2.0:
@@ -2520,8 +2527,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey@3.4.1(vite@4.4.9):
-    resolution: {integrity: sha512-zfbWOhyRXKc6Mg4JRMdj1/lEFCoKcJ7PM4dmvnxraOKSCReEM3cvOV+Iwg7KfPlhO1voBLmYVqcy1FuT23462A==}
+  /vite-plugin-monkey@3.4.2(vite@4.4.9):
+    resolution: {integrity: sha512-A0h7tPWrWParlmoSHviMqTdAjpI/ayupv4xaycxyQtCbo4rRSB6JFdNECMjxnxTftYo76LbT2586ZFg89G73yw==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
       vite: '>=3.0.0'
@@ -2533,11 +2540,11 @@ packages:
       cross-spawn: 7.0.3
       detect-port: 1.5.1
       htmlparser2: 9.0.0
-      magic-string: 0.30.1
+      magic-string: 0.30.3
       mrmime: 1.0.1
       open: 9.1.0
       picocolors: 1.0.0
-      systemjs: 6.14.1
+      systemjs: 6.14.2
       vite: 4.4.9(@types/node@20.5.3)
     transitivePeerDependencies:
       - supports-color
