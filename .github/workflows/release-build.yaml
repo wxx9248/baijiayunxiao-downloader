@@ -27,11 +27,11 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checks-out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Checks-out repository for wxx9248/bump-semver
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: wxx9248/bump-semver
           path: bump-semver
