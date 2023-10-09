@@ -23,7 +23,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mdi/font": "^7.2.96",
+    "@mdi/font": "^7.3.67",
     "vite-plugin-monkey": "^3.5.0",
     "vite-plugin-vuetify": "^1.0.2",
     "vue": "^3.3.4",
