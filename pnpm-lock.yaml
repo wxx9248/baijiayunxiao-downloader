@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@mdi/font':
-    specifier: ^7.2.96
-    version: 7.2.96
+    specifier: ^7.3.67
+    version: 7.3.67
   vite-plugin-monkey:
     specifier: ^3.5.0
     version: 3.5.0(vite@4.4.11)
@@ -328,8 +328,8 @@ packages:
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  /@mdi/font@7.2.96:
-    resolution: {integrity: sha512-e//lmkmpFUMZKhmCY9zdjRe4zNXfbOIJnn6xveHbaV2kSw5aJ5dLXUxcRt1Gxfi7ZYpFLUWlkG2MGSFAiqAu7w==}
+  /@mdi/font@7.3.67:
+    resolution: {integrity: sha512-SWxvzRbUQRfewlIV+OF4/YF4DkeTjMWoT8Hh9yeU/5UBVdJZj9Uf4a9+cXjknSIhIaMxZ/4N1O/s7ojApOOGjg==}
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
