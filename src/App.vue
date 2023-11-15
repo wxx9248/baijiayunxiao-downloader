@@ -4,8 +4,8 @@ import { ref } from "vue";
 import { AlertController } from "@/composibles/AlertController";
 import { DownloadManager } from "@/composibles/DownloadManager";
 import { unsafeWindow } from "vite-plugin-monkey/dist/client";
-import type { VideoInfo, VideoSource } from "@/util/VideoInfoExtration";
-import { extractVideoInfo } from "@/util/VideoInfoExtration";
+import type { VideoInfo, VideoSource } from "@/util/VideoInfoExtraction";
+import { extractVideoInfo } from "@/util/VideoInfoExtraction";
 import { getUUID } from "@/util/UUID";
 import { toHumanReadableSize } from "@/util/UnitConversion";
 
