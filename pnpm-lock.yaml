@@ -9,8 +9,8 @@ dependencies:
     specifier: ^7.3.67
     version: 7.3.67
   vite-plugin-monkey:
-    specifier: ^3.5.0
-    version: 3.5.0(vite@4.5.1)
+    specifier: ^3.5.1
+    version: 3.5.1(vite@4.5.1)
   vite-plugin-vuetify:
     specifier: ^1.0.2
     version: 1.0.2(vite@4.5.1)(vue@3.3.12)(vuetify@3.4.7)
@@ -719,8 +719,8 @@ packages:
       acorn: 8.9.0
     dev: true
 
-  /acorn-walk@8.2.0:
-    resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
+  /acorn-walk@8.3.1:
+    resolution: {integrity: sha512-TgUZgYvqZprrl7YldZNoa9OciCAyZR+Ejm9eXzKCmjsF5IKp/wgQ7Z/ZpjpGTIUPwrHQIcYeI8qDh4PsEwxMbw==}
     engines: {node: '>=0.4.0'}
     dev: false
 
@@ -729,11 +729,6 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
-
-  /address@1.2.2:
-    resolution: {integrity: sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA==}
-    engines: {node: '>= 10.0.0'}
-    dev: false
 
   /ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -964,16 +959,6 @@ packages:
       has-property-descriptors: 1.0.0
       object-keys: 1.1.1
     dev: true
-
-  /detect-port@1.5.1:
-    resolution: {integrity: sha512-aBzdj76lueB6uUst5iAs7+0H/oOjqI5D16XUWxlWMIMROhcM0rfsNVk93zTngq1dDNpoXRr++Sus7ETAExppAQ==}
-    hasBin: true
-    dependencies:
-      address: 1.2.2
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -1831,13 +1816,6 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-string@0.30.3:
-    resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: false
-
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
@@ -2520,8 +2498,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey@3.5.0(vite@4.5.1):
-    resolution: {integrity: sha512-NS3qiLvnzyRPsbfanbnzMGk33rCmN1iGs2RkGykl7H5aCwZhpb7nyUSOy3CD8haP8rqTQ9BS23BLprV5MRIy/Q==}
+  /vite-plugin-monkey@3.5.1(vite@4.5.1):
+    resolution: {integrity: sha512-sLbWbhvhXbm1d4SFY9eVx3KFqDP1gbjqUJlbpf/KRKLAFcjO3VIMOJb0oqxH77zlmSZhITrqLcsB3AyH+92i/w==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
       vite: '>=3.0.0'
@@ -2529,18 +2507,15 @@ packages:
       vite:
         optional: true
     dependencies:
-      acorn-walk: 8.2.0
+      acorn-walk: 8.3.1
       cross-spawn: 7.0.3
-      detect-port: 1.5.1
       htmlparser2: 9.0.0
-      magic-string: 0.30.3
+      magic-string: 0.30.5
       mrmime: 1.0.1
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.2
       vite: 4.5.1(@types/node@20.10.4)
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /vite-plugin-vuetify@1.0.2(vite@4.5.1)(vue@3.3.12)(vuetify@3.4.7):
