@@ -1,4 +1,5 @@
 {
+  "files": [],
   "extends": "@vue/tsconfig/tsconfig.json",
   "include": [
     "vite.config.*",
