@@ -4,8 +4,8 @@ import { ref } from "vue";
 import { AlertController } from "@/composibles/AlertController";
 import { DownloadManager } from "@/composibles/DownloadManager";
 import { unsafeWindow } from "vite-plugin-monkey/dist/client";
-import type { VideoInfo, VideoSource } from "@/util/VideoInfoExtration";
-import { extractVideoInfo } from "@/util/VideoInfoExtration";
+import type { VideoInfo, VideoSource } from "@/util/VideoInfoExtraction";
+import { extractVideoInfo } from "@/util/VideoInfoExtraction";
 import { getUUID } from "@/util/UUID";
 import { toHumanReadableSize } from "@/util/UnitConversion";
 
@@ -45,7 +45,7 @@ async function sourceListClickHandler(source: VideoSource) {
 
     let url = source.url;
     if (uuid !== "") {
-        url += `?uuid=${uuid}`;
+        url += `&uuid=${uuid}`;
     }
 
     let filename = currentVideoInfo.value.title;
@@ -58,7 +58,8 @@ async function sourceListClickHandler(source: VideoSource) {
 
     const status = await downloadManager.download(url, filename, extension);
     if (status === "error") {
-        alertController.error("视频下载失败");
+        alertController.error(`视频下载失败: ${filename}.${extension}`);
+        alertController.show();
     }
 }
 </script>
@@ -82,13 +83,13 @@ async function sourceListClickHandler(source: VideoSource) {
         </v-fade-transition>
     </div>
     <div class="bottom-left">
-        <v-table class="rounded" theme="dark">
+        <v-table class="rounded" style="width: 100%" theme="dark">
             <thead>
                 <tr>
-                    <th class="text-left" style="width: 70%">文件名</th>
-                    <th class="text-left" style="width: 10%">进度</th>
-                    <th class="text-left" style="width: 10%">保存</th>
-                    <th class="text-left" style="width: 10%">移除</th>
+                    <th class="text-left" style="width: 55%">文件名</th>
+                    <th class="text-left" style="width: 15%">进度</th>
+                    <th class="text-left" style="width: 15%">保存</th>
+                    <th class="text-left" style="width: 15%">移除</th>
                 </tr>
             </thead>
             <tbody>
@@ -111,16 +112,22 @@ async function sourceListClickHandler(source: VideoSource) {
     </div>
 
     <div class="bottom-right">
-        <v-list class="source-list rounded" theme="dark">
-            <v-list-item
-                v-for="source in currentVideoInfo.sources"
-                :key="source.url"
-                :title="`${source.definition} ${
-                    source.format
-                } ${toHumanReadableSize(source.size, 1)}`"
-                @click="sourceListClickHandler(source)"
-            ></v-list-item>
-        </v-list>
+        <v-slide-y-reverse-transition>
+            <v-list
+                v-if="showSourceList"
+                class="source-list rounded"
+                theme="dark"
+            >
+                <v-list-item
+                    v-for="source in currentVideoInfo.sources"
+                    :key="source.url"
+                    :title="`${source.definition} ${
+                        source.format
+                    } ${toHumanReadableSize(source.size, 1)}`"
+                    @click="sourceListClickHandler(source)"
+                ></v-list-item>
+            </v-list>
+        </v-slide-y-reverse-transition>
         <v-btn
             :disabled="currentVideoInfo.videoID === ''"
             color="blue"
@@ -148,6 +155,7 @@ async function sourceListClickHandler(source: VideoSource) {
     position: fixed;
     bottom: 0;
     left: 0;
+    min-width: 30%;
     max-width: 50%;
 }
 
@@ -164,9 +172,5 @@ async function sourceListClickHandler(source: VideoSource) {
 
 .bottom-right * {
     margin: 5px;
-}
-
-.source-list {
-    display: v-bind('showSourceList ? "block": "none"');
 }
 </style>

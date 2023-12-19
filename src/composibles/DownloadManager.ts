@@ -93,6 +93,11 @@ export class DownloadManager {
         try {
             const url: string = this.#viewMap.value.get(key)!.url;
             const response = await fetch(url);
+            if (response.status != 200) {
+                entry.status = "error";
+                return entry;
+            }
+
             const reader = response.body!.getReader();
             const contentLength: number =
                 +response.headers.get("Content-Length")!;

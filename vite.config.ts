@@ -8,6 +8,9 @@ import vuetify from "vite-plugin-vuetify";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        cssMinify: true
+    },
     plugins: [
         vue(),
         vuetify({ autoImport: true }),
@@ -38,8 +41,7 @@ export default defineConfig({
             build: {
                 externalGlobals: {
                     vue: cdn.jsdelivr("Vue", "dist/vue.global.prod.js")
-                },
-                minifyCss: true
+                }
             }
         })
     ],

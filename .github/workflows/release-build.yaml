@@ -76,7 +76,7 @@ jobs:
           pnpm install
       - name: Build distributable
         run: |
-          pnpm build-only
+          pnpm build
       - name: Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
