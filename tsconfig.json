@@ -3,7 +3,11 @@
   "include": [
     "env.d.ts",
     "src/**/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "playwright.config.*"
   ],
   "compilerOptions": {
     "baseUrl": ".",
@@ -13,10 +17,5 @@
       ]
     },
     "ignoreDeprecations": "5.0"
-  },
-  "references": [
-    {
-      "path": "./tsconfig.config.json"
-    }
-  ]
+  }
 }
