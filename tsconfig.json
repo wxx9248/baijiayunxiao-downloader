@@ -1,4 +1,5 @@
 {
+  "files": [],
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": [
     "env.d.ts",
