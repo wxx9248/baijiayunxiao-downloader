@@ -30,7 +30,7 @@
     "vuetify": "^3.5.1"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.7.1",
+    "@rushstack/eslint-patch": "^1.7.2",
     "@types/node": "^20.11.6",
     "@vitejs/plugin-vue": "^4.6.2",
     "@vue/eslint-config-prettier": "^9.0.0",
