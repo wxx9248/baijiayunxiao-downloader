@@ -1,4 +1,4 @@
-name: pull-request-build
+name: Pull Request Build
 on:
   pull_request:
     branches:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: 18
+          node-version: 20
       - name: Setup pnpm
         run: |
           npm install --global pnpm
