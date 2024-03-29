@@ -27,7 +27,7 @@
     "vite-plugin-monkey": "^3.5.2",
     "vite-plugin-vuetify": "^1.0.2",
     "vue": "^3.4.21",
-    "vuetify": "^3.5.12"
+    "vuetify": "^3.5.13"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.0",
