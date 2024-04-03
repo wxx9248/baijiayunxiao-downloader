@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^1.10.1
     version: 1.10.1
   '@types/node':
-    specifier: ^20.12.2
-    version: 20.12.2
+    specifier: ^20.12.3
+    version: 20.12.3
   '@vitejs/plugin-vue':
     specifier: ^4.6.2
     version: 4.6.2(vite@4.5.2)(vue@3.4.21)
@@ -57,7 +57,7 @@ devDependencies:
     version: 5.4.3
   vite:
     specifier: ^4.5.2
-    version: 4.5.2(@types/node@20.12.2)
+    version: 4.5.2(@types/node@20.12.3)
   vue-tsc:
     specifier: ^2.0.7
     version: 2.0.7(typescript@5.4.3)
@@ -373,8 +373,8 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
 
-  /@types/node@20.12.2:
-    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
+  /@types/node@20.12.3:
+    resolution: {integrity: sha512-sD+ia2ubTeWrOu+YMF+MTAB7E+O7qsMqAbMfW7DG3K1URwhZ5hN1pLlRVGbf4wDFzSfikL05M17EyorS86jShw==}
     dependencies:
       undici-types: 5.26.5
 
@@ -525,7 +525,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.2(@types/node@20.12.2)
+      vite: 4.5.2(@types/node@20.12.3)
       vue: 3.4.21(typescript@5.4.3)
     dev: true
 
@@ -2500,7 +2500,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.2
-      vite: 4.5.2(@types/node@20.12.2)
+      vite: 4.5.2(@types/node@20.12.3)
     dev: false
 
   /vite-plugin-vuetify@1.0.2(vite@4.5.2)(vue@3.4.21)(vuetify@3.5.13):
@@ -2513,14 +2513,14 @@ packages:
       '@vuetify/loader-shared': 1.7.1(vue@3.4.21)(vuetify@3.5.13)
       debug: 4.3.4
       upath: 2.0.1
-      vite: 4.5.2(@types/node@20.12.2)
+      vite: 4.5.2(@types/node@20.12.3)
       vuetify: 3.5.13(typescript@5.4.3)(vite-plugin-vuetify@1.0.2)(vue@3.4.21)
     transitivePeerDependencies:
       - supports-color
       - vue
     dev: false
 
-  /vite@4.5.2(@types/node@20.12.2):
+  /vite@4.5.2(@types/node@20.12.3):
     resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2548,7 +2548,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.2
+      '@types/node': 20.12.3
       esbuild: 0.18.11
       postcss: 8.4.33
       rollup: 3.27.2
