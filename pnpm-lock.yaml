@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^1.10.3
     version: 1.10.3
   '@types/node':
-    specifier: ^20.14.6
-    version: 20.14.6
+    specifier: ^20.14.7
+    version: 20.14.7
   '@vitejs/plugin-vue':
     specifier: ^4.6.2
     version: 4.6.2(vite@4.5.3)(vue@3.4.29)
@@ -57,7 +57,7 @@ devDependencies:
     version: 5.5.2
   vite:
     specifier: ^4.5.3
-    version: 4.5.3(@types/node@20.14.6)
+    version: 4.5.3(@types/node@20.14.7)
   vue-tsc:
     specifier: ^2.0.21
     version: 2.0.21(typescript@5.5.2)
@@ -381,8 +381,8 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
 
-  /@types/node@20.14.6:
-    resolution: {integrity: sha512-JbA0XIJPL1IiNnU7PFxDXyfAwcwVVrOoqyzzyQTyMeVhBzkJVMSkC1LlVsRQ2lpqiY4n6Bb9oCS6lzDKVQxbZw==}
+  /@types/node@20.14.7:
+    resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
     dependencies:
       undici-types: 5.26.5
 
@@ -533,7 +533,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.3(@types/node@20.14.6)
+      vite: 4.5.3(@types/node@20.14.7)
       vue: 3.4.29(typescript@5.5.2)
     dev: true
 
@@ -2537,7 +2537,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       systemjs: 6.14.2
-      vite: 4.5.3(@types/node@20.14.6)
+      vite: 4.5.3(@types/node@20.14.7)
     dev: false
 
   /vite-plugin-vuetify@1.0.2(vite@4.5.3)(vue@3.4.29)(vuetify@3.6.10):
@@ -2550,14 +2550,14 @@ packages:
       '@vuetify/loader-shared': 1.7.1(vue@3.4.29)(vuetify@3.6.10)
       debug: 4.3.4
       upath: 2.0.1
-      vite: 4.5.3(@types/node@20.14.6)
+      vite: 4.5.3(@types/node@20.14.7)
       vuetify: 3.6.10(typescript@5.5.2)(vite-plugin-vuetify@1.0.2)(vue@3.4.29)
     transitivePeerDependencies:
       - supports-color
       - vue
     dev: false
 
-  /vite@4.5.3(@types/node@20.14.6):
+  /vite@4.5.3(@types/node@20.14.7):
     resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2585,7 +2585,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.14.6
+      '@types/node': 20.14.7
       esbuild: 0.18.11
       postcss: 8.4.35
       rollup: 3.27.2
