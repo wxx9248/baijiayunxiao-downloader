@@ -42,7 +42,7 @@
     "prettier": "^3.3.2",
     "typescript": "~5.5.3",
     "vite": "^4.5.3",
-    "vue-tsc": "^2.0.24"
+    "vue-tsc": "^2.0.26"
   },
   "engines": {
     "node": "20.*.*"
