@@ -13,10 +13,10 @@ importers:
         version: 7.4.47
       vite-plugin-monkey:
         specifier: ^3.5.2
-        version: 3.5.2(vite@4.5.5(@types/node@22.8.1))
+        version: 3.5.2(vite@4.5.5(@types/node@22.8.2))
       vite-plugin-vuetify:
         specifier: ^1.0.2
-        version: 1.0.2(vite@4.5.5(@types/node@22.8.1))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3)
+        version: 1.0.2(vite@4.5.5(@types/node@22.8.2))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3)
       vue:
         specifier: ^3.5.12
         version: 3.5.12(typescript@5.6.3)
@@ -28,11 +28,11 @@ importers:
         specifier: ^1.10.4
         version: 1.10.4
       '@types/node':
-        specifier: ^22.8.1
-        version: 22.8.1
+        specifier: ^22.8.2
+        version: 22.8.2
       '@vitejs/plugin-vue':
         specifier: ^4.6.2
-        version: 4.6.2(vite@4.5.5(@types/node@22.8.1))(vue@3.5.12(typescript@5.6.3))
+        version: 4.6.2(vite@4.5.5(@types/node@22.8.2))(vue@3.5.12(typescript@5.6.3))
       '@vue/eslint-config-prettier':
         specifier: ^10.1.0
         version: 10.1.0(eslint@8.57.1)(prettier@3.3.3)
@@ -59,7 +59,7 @@ importers:
         version: 5.6.3
       vite:
         specifier: ^4.5.5
-        version: 4.5.5(@types/node@22.8.1)
+        version: 4.5.5(@types/node@22.8.2)
       vue-tsc:
         specifier: ^2.1.8
         version: 2.1.8(typescript@5.6.3)
@@ -281,8 +281,8 @@ packages:
   '@types/json-schema@7.0.12':
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
 
-  '@types/node@22.8.1':
-    resolution: {integrity: sha512-k6Gi8Yyo8EtrNtkHXutUu2corfDf9su95VYVP10aGYMMROM6SAItZi0w1XszA6RtWTHSVp5OeFof37w0IEqCQg==}
+  '@types/node@22.8.2':
+    resolution: {integrity: sha512-NzaRNFV+FZkvK/KLCsNdTvID0SThyrs5SHB6tsD/lajr22FGC73N2QeDPM2wHtVde8mgcXuSsHQkH5cX1pbPLw==}
 
   '@types/semver@7.5.2':
     resolution: {integrity: sha512-7aqorHYgdNO4DM36stTiGO3DvKoex9TQRwsJU6vMaFGyqpBA1MNZkz+PG3gaNUPpTAOYhT1WR7M1JyA3fbS9Cw==}
@@ -1724,7 +1724,7 @@ snapshots:
 
   '@types/json-schema@7.0.12': {}
 
-  '@types/node@22.8.1':
+  '@types/node@22.8.2':
     dependencies:
       undici-types: 6.19.8
 
@@ -1818,9 +1818,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@4.6.2(vite@4.5.5(@types/node@22.8.1))(vue@3.5.12(typescript@5.6.3))':
+  '@vitejs/plugin-vue@4.6.2(vite@4.5.5(@types/node@22.8.2))(vue@3.5.12(typescript@5.6.3))':
     dependencies:
-      vite: 4.5.5(@types/node@22.8.1)
+      vite: 4.5.5(@types/node@22.8.2)
       vue: 3.5.12(typescript@5.6.3)
 
   '@volar/language-core@2.4.8':
@@ -3019,7 +3019,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-monkey@3.5.2(vite@4.5.5(@types/node@22.8.1)):
+  vite-plugin-monkey@3.5.2(vite@4.5.5(@types/node@22.8.2)):
     dependencies:
       acorn-walk: 8.3.1
       cross-spawn: 7.0.3
@@ -3030,26 +3030,26 @@ snapshots:
       picocolors: 1.0.0
       systemjs: 6.14.2
     optionalDependencies:
-      vite: 4.5.5(@types/node@22.8.1)
+      vite: 4.5.5(@types/node@22.8.2)
 
-  vite-plugin-vuetify@1.0.2(vite@4.5.5(@types/node@22.8.1))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3):
+  vite-plugin-vuetify@1.0.2(vite@4.5.5(@types/node@22.8.2))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3):
     dependencies:
       '@vuetify/loader-shared': 1.7.1(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3(typescript@5.6.3)(vite-plugin-vuetify@1.0.2)(vue@3.5.12(typescript@5.6.3)))
       debug: 4.3.4
       upath: 2.0.1
-      vite: 4.5.5(@types/node@22.8.1)
+      vite: 4.5.5(@types/node@22.8.2)
       vue: 3.5.12(typescript@5.6.3)
       vuetify: 3.7.3(typescript@5.6.3)(vite-plugin-vuetify@1.0.2)(vue@3.5.12(typescript@5.6.3))
     transitivePeerDependencies:
       - supports-color
 
-  vite@4.5.5(@types/node@22.8.1):
+  vite@4.5.5(@types/node@22.8.2):
     dependencies:
       esbuild: 0.18.11
       postcss: 8.4.47
       rollup: 3.29.5
     optionalDependencies:
-      '@types/node': 22.8.1
+      '@types/node': 22.8.2
       fsevents: 2.3.2
 
   vscode-uri@3.0.8: {}
@@ -3102,7 +3102,7 @@ snapshots:
       vue: 3.5.12(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
-      vite-plugin-vuetify: 1.0.2(vite@4.5.5(@types/node@22.8.1))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3)
+      vite-plugin-vuetify: 1.0.2(vite@4.5.5(@types/node@22.8.2))(vue@3.5.12(typescript@5.6.3))(vuetify@3.7.3)
 
   which-boxed-primitive@1.0.2:
     dependencies:
