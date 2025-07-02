@@ -44,7 +44,7 @@ importers:
         version: 5.5.1(eslint-config-prettier@10.1.5(eslint@9.30.1))(eslint@9.30.1)(prettier@3.6.2)
       eslint-plugin-vue:
         specifier: ^10.2.0
-        version: 10.2.0(eslint@9.30.1)(vue-eslint-parser@10.1.4(eslint@9.30.1))
+        version: 10.2.0(eslint@9.30.1)(vue-eslint-parser@10.2.0(eslint@9.30.1))
       globals:
         specifier: ^16.3.0
         version: 16.3.0
@@ -58,8 +58,8 @@ importers:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@24.0.10)
       vue-eslint-parser:
-        specifier: ^10.1.4
-        version: 10.1.4(eslint@9.30.1)
+        specifier: ^10.2.0
+        version: 10.2.0(eslint@9.30.1)
       vue-tsc:
         specifier: ^3.0.0
         version: 3.0.0(typescript@5.8.3)
@@ -826,9 +826,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -1057,8 +1054,8 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
-  vue-eslint-parser@10.1.4:
-    resolution: {integrity: sha512-EIZvCukIEMHEb3mxOKemtvWR1fcUAdWWAgkfyjmRHzvyhrZvBvH9oz69+thDIWhGiIQjZnPkCn8yHqvjM+a9eg==}
+  vue-eslint-parser@10.2.0:
+    resolution: {integrity: sha512-CydUvFOQKD928UzZhTp4pr2vWz1L+H99t7Pkln2QSPdvmURT0MoC4wUccfCnuEaihNsu9aYYyk+bep8rlfkUXw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -1589,7 +1586,7 @@ snapshots:
     optionalDependencies:
       eslint-config-prettier: 10.1.5(eslint@9.30.1)
 
-  eslint-plugin-vue@10.2.0(eslint@9.30.1)(vue-eslint-parser@10.1.4(eslint@9.30.1)):
+  eslint-plugin-vue@10.2.0(eslint@9.30.1)(vue-eslint-parser@10.2.0(eslint@9.30.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.30.1)
       eslint: 9.30.1
@@ -1597,7 +1594,7 @@ snapshots:
       nth-check: 2.1.1
       postcss-selector-parser: 6.1.2
       semver: 7.7.2
-      vue-eslint-parser: 10.1.4(eslint@9.30.1)
+      vue-eslint-parser: 10.2.0(eslint@9.30.1)
       xml-name-validator: 4.0.0
 
   eslint-scope@8.4.0:
@@ -1772,8 +1769,6 @@ snapshots:
       p-locate: 5.0.0
 
   lodash.merge@4.6.2: {}
-
-  lodash@4.17.21: {}
 
   magic-string@0.30.17:
     dependencies:
@@ -1978,7 +1973,7 @@ snapshots:
 
   vscode-uri@3.1.0: {}
 
-  vue-eslint-parser@10.1.4(eslint@9.30.1):
+  vue-eslint-parser@10.2.0(eslint@9.30.1):
     dependencies:
       debug: 4.4.1
       eslint: 9.30.1
@@ -1986,7 +1981,6 @@ snapshots:
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
       esquery: 1.6.0
-      lodash: 4.17.21
       semver: 7.7.2
     transitivePeerDependencies:
       - supports-color
