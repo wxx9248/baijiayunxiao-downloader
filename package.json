@@ -25,7 +25,7 @@
     "vite-plugin-monkey": "^6.0.0",
     "vite-plugin-vuetify": "^2.1.1",
     "vue": "^3.5.18",
-    "vuetify": "^3.9.2"
+    "vuetify": "^3.9.3"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
