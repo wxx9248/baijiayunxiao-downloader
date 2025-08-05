@@ -40,7 +40,7 @@
     "typescript": "~5.9.2",
     "vite": "^7.0.6",
     "vue-eslint-parser": "^10.2.0",
-    "vue-tsc": "^3.0.4"
+    "vue-tsc": "^3.0.5"
   },
   "engines": {
     "node": "22.*.*"
