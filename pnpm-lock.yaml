@@ -12,8 +12,8 @@ importers:
         specifier: ^7.4.47
         version: 7.4.47
       vite-plugin-monkey:
-        specifier: ^7.1.4
-        version: 7.1.4(postcss@8.5.6)(vite@7.2.1(@types/node@24.10.0))
+        specifier: ^7.1.5
+        version: 7.1.5(postcss@8.5.6)(vite@7.2.1(@types/node@24.10.0))
       vite-plugin-vuetify:
         specifier: ^2.1.2
         version: 2.1.2(vite@7.2.1(@types/node@24.10.0))(vue@3.5.24(typescript@5.9.3))(vuetify@3.10.9)
@@ -837,9 +837,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  magic-string@0.30.18:
-    resolution: {integrity: sha512-yi8swmWbO17qHhwIBNeeZxTceJMeBvWJaId6dyvTSOwTipqeHhMhOrz6513r1sOKnpvQ7zkhlG8tPrpilwTxHQ==}
-
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
@@ -957,8 +954,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  run-applescript@7.0.0:
-    resolution: {integrity: sha512-9by4Ij99JUr/MCFBUkDKLWK3G9HVXmabKz9U5MlIAIuvuzkiOicRYs8XJLxX+xahD+mLiiCYDqF9dKAgtzKP1A==}
+  run-applescript@7.1.0:
+    resolution: {integrity: sha512-DPe5pVFaAsinSaV6QjQ6gdiedWDcRCbUuiQfQa2wmWV7+xC9bGulGI8+TdRmoFkAPaBXk8CrAbnlY2ISniJ47Q==}
     engines: {node: '>=18'}
 
   semver@6.3.1:
@@ -1028,8 +1025,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vite-plugin-monkey@7.1.4:
-    resolution: {integrity: sha512-nA/uWbLT3b0uyCFBV7bsIUn+OZCpPzymDX1Nx9btKrG7in06m0txbT2SipCZPZJZyyQHPFNLrCSrWsQIFDHDlg==}
+  vite-plugin-monkey@7.1.5:
+    resolution: {integrity: sha512-/4NRC6Dg+sgVhqtRhd9cscHeeQ7C+F0sZHqkV9SzACkzX1S4gW9dWoayr6HdUH6slm6GLVpwtfSAmTY/CLWUWA==}
     peerDependencies:
       vite: ^6.0.0 || ^7.0.0
     peerDependenciesMeta:
@@ -1509,7 +1506,7 @@ snapshots:
 
   bundle-name@4.1.0:
     dependencies:
-      run-applescript: 7.0.0
+      run-applescript: 7.1.0
 
   callsites@3.1.0: {}
 
@@ -1804,10 +1801,6 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  magic-string@0.30.18:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
-
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1937,7 +1930,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.52.5
       fsevents: 2.3.3
 
-  run-applescript@7.0.0: {}
+  run-applescript@7.1.0: {}
 
   semver@6.3.1: {}
 
@@ -1986,14 +1979,14 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite-plugin-monkey@7.1.4(postcss@8.5.6)(vite@7.2.1(@types/node@24.10.0)):
+  vite-plugin-monkey@7.1.5(postcss@8.5.6)(vite@7.2.1(@types/node@24.10.0)):
     dependencies:
       acorn: 8.15.0
       acorn-walk: 8.3.4
       cross-spawn: 7.0.6
       htmlparser2: 10.0.0
       import-meta-resolve: 4.2.0
-      magic-string: 0.30.18
+      magic-string: 0.30.21
       mrmime: 2.0.1
       open: 10.2.0
       picocolors: 1.1.1
