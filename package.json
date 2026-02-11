@@ -28,7 +28,7 @@
     "vuetify": "^3.11.8"
   },
   "devDependencies": {
-    "@types/node": "^25.2.2",
+    "@types/node": "^25.2.3",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.2",
